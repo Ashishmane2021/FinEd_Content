@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Card with TTS</title>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=3mMZ3DZy"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      position: relative;
+      background: white;
+      padding: 30px;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      line-height: 1.6;
+    }
+    .audio-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    .audio-btn:hover {
+      background: #45a049;
+    }
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <button class="audio-btn" onclick="playText()">🔊 Read</button>
+    <h2>Card 3: But — Why Do Companies Sell Shares?</h2>
+    <p>
+      You might be wondering, “Why would a company sell a piece of itself to someone like me?”
+      Well, here’s the simple answer: To raise money!
+    </p>
+    <p>
+      When a company needs money to grow, launch new products, or expand, it sells shares of itself to investors like you and me. 
+      This process is called an Initial Public Offering (IPO).
+    </p>
+    <p>
+      ⚠️ Companies can also raise money through loans, private investors, or issuing bonds — but an IPO is how they invite everyday people to invest and become part-owners.
+    </p>
+    <p>
+      Let’s say Paytm, a popular fintech company, wants to expand its services across rural India and develop new financial products. 
+      To raise the money for that, they might decide to sell shares to the public.
+    </p>
+    <p>
+      When you buy a share, you’re giving Paytm some cash to help it grow. 
+      In return, you get a piece of the business!
+    </p>
+  </div>
+
+  <script>
+    function playText() {
+      let text = document.querySelector(".card").innerText;
+      responsiveVoice.speak(text, "UK English Male");
+    }
+  </script>
+</body>
+</html>
+
